@@ -1,6 +1,9 @@
 var db = firebase.database();
 var productos_ref = db.ref('productos');
 var table = $('table tbody');
+setTimeout(function() {
+  var oTable = $('#tabla').DataTable();
+}, 5000);
 
 
 function getFormData() {
@@ -33,6 +36,7 @@ function addProdToDOM(is_update, prod, key, row) {
   var el = 
     '<tr data-key="' + key + '">' + 
       '<td>' + prod.codigo + '</td>' +
+      '<td>' + prod.marca + '</td>' +
       '<td>' + prod.descripcion + '</td>' + 
       '<td>' + prod.cantidad + '</td>' +
       '<td>' + prod.unidad + '</td>' +
@@ -117,6 +121,7 @@ function getProds() {
     
     addProdToDOM(false, prod, key);
   });
+
 }
 
 function init() {
@@ -128,4 +133,6 @@ function init() {
 }
 
 init();
+
+
 

@@ -5,19 +5,21 @@
   <title>Tienda</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 </head>
 <body>
   <h3 class="center">Base de datos en tiempo real</h3>
   <div class="row">
-    <table class="table table-hover">
+    <table class="table table-hover" id="tabla">
       <thead>
         <tr>
-          <th>ID</th>
           <th>CODIGO</th>
+          <th>MARCA</th>
           <th>DESCRIPCIÓN</th>
           <th>CANTIDAD</th>
           <th>UNIDAD</th>
           <th>PRECIO</th>
+          <th>ACCIONES</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -27,6 +29,7 @@
   <div class="row">
     <form class="col sm-12 l6 offset-l3">
       <input type="text" id="codigo" placeholder="Código">
+      <input type="text" id="marca" placeholder="Marca">
       <input type="text" id="descripcion" placeholder="Descripción">
       <input type="text" id="cantidad" placeholder="Cantidad">
       <input type="text" id="unidad" placeholder="Unidad">
@@ -38,6 +41,7 @@
   
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script>
   // Initialize Firebase
   var config = {
